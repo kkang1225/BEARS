@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>Doosan Bears</title>
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/jquery.bxslider.css">
+	<script src="./js/jquery-3.3.1.min.js"></script>
+	<script src="./js/jquery.bxslider.js"></script>
+	<style>
+		header{width:100%;background:#10112f;border-bottom:2px solid #de1b24;margin:0 auto;min-width:1200px;}
+			#main_header{width:1200px;height:107px;position:relative;margin:0 auto;overflow: hidden;}
+			#main_header>h1{width:112px;height:106px;color:#fff;position:absolute;left:0;background:url(./images/bears_logo.png) no-repeat center;text-indent:-9999px;}
+			#main_header>ul.gnb{width:100%;position:absolute;left:100px;}
+			#main_header>ul.gnb:after{content:"";display:block;clear:both;}
+			#main_header>ul.gnb>li{float:left;}
+			#main_header>ul.gnb>li>a{dispaly:block;color:#fff;line-height:109px;font-size:19px;font-weight:600;padding:27px;}
+			#main_header>ul.login{position:absolute;right:200px;}
+			#main_header>ul.login:after{content:"";display:block;clear:both;}
+			#main_header>ul.login>li{float:left;padding:0 5px;}
+			#main_header>ul.login>li>a{display:block;color:#fff;line-height:109px;font-size:14px;}
+
+			#main_header>ul.ticket{position:absolute;right:0;top:45px;}
+			#main_header>ul.ticket:after{content:"";display:block;clear:both;}
+			#main_header>ul.ticket>li{float:left;padding:0 3px;}
+			#main_header>ul.ticket>li>a{display:block;color:#fff;border-radius:20px;font-size:13px;line-height:23px;padding:0 15px 0 35px;}
+			#main_header>ul.ticket>li>a.ticket_btn{background:#ed1b23 url(./images/icon_ticketbtn.png) no-repeat 15px 50%;}
+			#main_header>ul.ticket>li>a.shop_btn{background:#ed1b23 url(./images/icon_shopbtn.png) no-repeat 15px 50%;}
+			.slider{width:100%;}
+
+			.slider div{height:670px;}
+			.slider div.img01{width: 100%;background:url(./images/20180904142759492.png) no-repeat center top;height:670px;text-indent:-9999px;}
+			.slider div.img02{width: 100%;background:url(./images/20180807160628082.jpg) no-repeat center top;height:670px;text-indent:-9999px;}
+			.slider div.img03{width: 100%;background:#cdcdcd url(./images/180404193044497.png) no-repeat center top;height:670px;text-indent:-9999px;}
+			.bx-wrapper{box-shadow:none;border:none;}
+			.bx-wrapper .bx-pager{top:0px;left:-500px;}
+			.bx-wrapper .bx-pager.bx-default-pager a{background:#ed1b23;width:20px;height:20px;border-radius:10px;}
+			a.active{background:none;border:3px solid #ed1b23;}
+			a.bx-pager-link{background-color:none;}
+
+		#container{width:100%;min-width:1200px;background:#f5f5f5;padding:20px;overflow: hidden;}
+			.main_container{width:1200px;margin:0 auto 0;position:relative;}
+			.main_container h3{background:url(./images/title_h3.png) no-repeat 0 0;padding:0 0 0 35px;font-size:25px;}
+			.main_container a.more{background:url(./images/more.png) no-repeat right center;padding-right:10px;position:absolute;right:0;top:10px;}
+			.main_container ul:after{content:"";display:block;clear:both;}
+			.main_container ul>li{float:left;width:370px;min-height:363px;margin:10px;border:1px solid #d8d8d8;overflow:hidden;}
+			.main_container a.plus{display:block;background:#6c697e;border-radius:30px;margin:30px auto 0;font-size:15px;width:120px;padding:8px 0;font-weight:bold;text-align:center;color:#fff;margin-bottom:20px;}
+			.main_container a.plus:hover{background:#ed1b23;transition:0.3s;}
+
+			.article{width:1200px;margin:50px auto;}
+				.main_article{width:100%;overflow:hidden;}
+				.news,.event,.ranking{width:33.33333%;float:left;border:1px solid #e4e4e4;padding:30px 20px;margin:0 0 0 0;min-height:440px;position:relative;}
+				.news,.event{border-right:none;}
+				/*.news,.event,.ranking:after{content:"";display:block;clear:both;}*/
+				.news>h4,.event>h4,.ranking>h4{font-size:25px;text-align:center;color:#222222;border-bottom:2px solid #6a6a6a;padding-bottom:15px;}
+				.news>a,.event>a,.ranking>a{position:absolute;right:20px;top:35px;color:#999999;font-size:14px;}
+				.news ul.title,.event ul.title,.ranking ul.title{float:left;padding-top:10px;clear:both;}
+				.news ul.title>li,.event ul.title>li,.ranking ul.title>li{width:300px;padding:8px 110px 8px 15px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;background:url(./images/icon.jpg) no-repeat 0 50%;position:relative;}
+				.news ul.title>li>a,.event ul.title>li>a,.ranking ul.title>a{font-size:15px;line-height:20px;font-weight:600;}
+				.news ul.title>li>span,.event ul.title>li>span,.ranking ul.title>li>span{position:absolute;right:0;top:10px;color:#999999;font-size:13px;}
+				.bg-white{background: #fff;}
+	</style>
+	<script>
+		$(function(){
+			$('.slider').bxSlider({
+				auto:true
+			});
+			$(".main_container li").mouseover(function(){
+				$(".main_container li").eq($(this).index()).css("border","3px solid #ed1b23");
+			}).mouseout(function(){
+				$(".main_container li").css("border","2px solid #d8d8d8")
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<div id="main_header">
+			<h1>LOGO</h1>
+			<ul class="gnb">
+				<li><a href="#">BEARS</a></li>
+				<li><a href="#">PLAYER</a></li>
+				<li><a href="#">GAME</a></li>
+				<li><a href="#">STATS</a></li>
+				<li><a href="#">FAN</a></li>
+				<li><a href="#">MEDIA</a></li>
+				<li><a href="#">BLOG</a></li>
+			</ul>
+			<ul class="login">
+				<li><a href="#">로그인</a></li>
+				<li><a href="#">회원가입</a></li>
+			</ul>
+			<ul class="ticket">
+				<li><a href="#" class="ticket_btn">TICKET</a></li>
+				<li><a href="#" class="shop_btn">SHOP</a></li>
+			</ul>
+		</div>
+	</header>
+
+		<div style="width:100%;min-width:1200px;overflow:hidden">
+			<div class="slider">
+				<div class="img01">VPROVE COLABORATION</div>
+				<div class="img02">INTERPARK</div>
+				<div class="img03">SCHEDULE</div>
+			</div>
+		</div>
+
+	<section id="container">
+		<div class="main_container">
+			<h3>BEARS VIDEO</h3>
+			<a href="#" class="more">MORE</a>
+			<ul>
+				<li><a href="#"><img src="../images/제니.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../images/제니.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../images/제니.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../images/제니.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../images/제니.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../images/제니.jpg" alt=""></a></li>
+			</ul>
+			<a href="#" class="plus">+ 더보기</a>
+		</div>
+	</section>
+	<section id="container bg-white">
+		<div class="article">
+			<div class="main_article">
+				<div class="news">
+					<h4>보도자료</h4>
+					<a href="#">더보기 ></a>
+					<ul class="title">
+						<li>
+							<a href="#">1.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">2.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">3.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">4.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">5.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">6.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">7.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">8.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">9.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+					</ul>
+					
+				</div>
+				<div class="event">
+					<h4>이벤트</h4>
+					<a href="#">더보기 ></a>
+					<ul class="title">
+						<li>
+							<a href="#">1.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">2.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">3.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">4.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">5.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">6.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">7.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">8.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">9.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+					</ul>
+				</div>
+				<div class="ranking">
+					<h4>팀 순위표</h4>
+					<a href="#">더보기 ></a>
+					<ul class="title">
+						<li>
+							<a href="#">1.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">2.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">3.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">4.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">5.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">6.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">7.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">8.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+						<li>
+							<a href="#">9.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, laborum.</a>
+							<span>2018-11-10</span>
+						</li>
+					</ul>
+				</div>
+						</div>
+			</div>
+	</section>
+</body>
+</html>
